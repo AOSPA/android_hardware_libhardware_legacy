@@ -29,7 +29,7 @@ cc_library_headers {
 cc_defaults {
     name: "libpower_defaults",
     defaults: ["system_suspend_defaults"],
-    // system_suspend_defaults adds libbinder, but libbpower doesn't need it
+    // system_suspend_defaults adds libbinder, but libpower doesn't need it
     // because libpower now uses libbinder_ndk.
     exclude_shared_libs: ["libbinder"],
     cflags: [
@@ -89,7 +89,6 @@ cc_library_shared {
     export_include_dirs: ["include"],
 
     cflags: [
-        "-DQEMU_HARDWARE",
         "-Wall",
         "-Werror",
     ],
